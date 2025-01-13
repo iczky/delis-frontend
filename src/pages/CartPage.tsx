@@ -6,12 +6,43 @@ import { PaymentMethod } from "@/components/cart/PaymentMethod";
 import { OrderSummary } from "@/components/cart/OrderSummary";
 import { formatToIDR } from "@/utils/currencyFormatter";
 import { ChevronLeft } from "lucide-react";
+import { useState } from "react";
+import { Customer } from "@/types/customer";
+import { generateWhatsAppLink } from "@/utils/BroadcastMessage";
 
 const CartPage: React.FC = () => {
   const { cart, getTotalPrice, addToCart, reduceQuantity, removeFromCart } =
     useCart();
+  const [customerDetails, setCustomerDetails] = useState<Customer>({
+    name: "",
+    phone: "",
+    address: "",
+    deliveryDate: "",
+  });
+
   const deliveryFee = 10000;
   const totalPrice = getTotalPrice() + deliveryFee;
+
+  const handleOrderSubmit = () => {
+    // Validate all fields are filled
+    if (
+      !customerDetails.name ||
+      !customerDetails.phone ||
+      !customerDetails.address ||
+      !customerDetails.deliveryDate
+    ) {
+      alert("Please fill in all customer details");
+      return;
+    }
+
+    const whatsAppLink = generateWhatsAppLink({
+      cart,
+      totalPrice,
+      customerDetails,
+    });
+
+    window.location.href = whatsAppLink;
+  };
 
   if (cart.length === 0) {
     return (
@@ -49,7 +80,10 @@ const CartPage: React.FC = () => {
           ))}
         </div>
 
-        <CustomerDetails />
+        <CustomerDetails
+          customerDetails={customerDetails}
+          setCustomerDetails={setCustomerDetails}
+        />
         <PaymentMethod />
         <OrderSummary
           subtotal={getTotalPrice()}
@@ -62,8 +96,8 @@ const CartPage: React.FC = () => {
       <div className="sticky bottom-0 bg-white border-t p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
         <button
           className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium
-                     active:from-blue-600 active:to-blue-700 transition-all shadow-sm"
-          onClick={() => alert("Purchase Confirmed")}>
+                       active:from-blue-600 active:to-blue-700 transition-all shadow-sm"
+          onClick={handleOrderSubmit}>
           Place Order • {formatToIDR(totalPrice)}
         </button>
       </div>

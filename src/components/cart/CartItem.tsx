@@ -2,6 +2,8 @@ import { Minus, Plus, X } from "lucide-react";
 import { formatToIDR } from "@/utils/currencyFormatter";
 import { CartItem as CartItemType } from "../../types/cart";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { ConfirmationDialog } from "../ConfirmationDialog";
 
 interface CartItemProps {
   item: CartItemType;
@@ -16,6 +18,13 @@ export const CartItem = ({
   reduceQuantity,
   removeFromCart,
 }: CartItemProps) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleRemoveItem = (id: number) => {
+    setIsDialogOpen(false);
+    removeFromCart(id);
+  };
+
   return (
     <div className="bg-white p-3 rounded-lg shadow-sm">
       <div className="flex gap-3">
@@ -32,7 +41,7 @@ export const CartItem = ({
           <div className="flex items-start justify-between mb-2">
             <h2 className="font-medium text-gray-800">{item.name}</h2>
             <button
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => setIsDialogOpen(true)}
               className="text-gray-400">
               <X size={18} />
             </button>
@@ -60,6 +69,13 @@ export const CartItem = ({
           </div>
         </div>
       </div>
+      <ConfirmationDialog
+        isOpen={isDialogOpen}
+        title="Remove Item"
+        description={`Are you sure you want to remove ${item.name} from your cart?`}
+        onConfirm={() => handleRemoveItem(item.id)}
+        onClose={() => setIsDialogOpen(false)}
+      />
     </div>
   );
 };

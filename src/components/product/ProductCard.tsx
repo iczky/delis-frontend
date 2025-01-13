@@ -61,6 +61,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           alt={name}
           className="w-full h-48 sm:h-40 object-cover"
         />
+        {quantity > 0 && (
+          <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold py-1 px-2 rounded-full">
+            {quantity}
+          </div>
+        )}
       </div>
       <div className="p-4">
         <div className="flex flex-col gap-2 items-start">
@@ -75,10 +80,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </Button>
         ) : (
           // Show quantity controls if item is in cart
-          <div className="mt-4 flex flex-col gap-2 bg-blue-50 rounded-md p-2">
-            <span className="text-blue-600 font-medium text-left">
-              In Cart: {quantity}
-            </span>
+          <div className="mt-4 flex flex-col gap-2 rounded-md">
             <div className="grid grid-cols-3 gap-2">
               <Button onClick={() => handleDecrement(id)}>-</Button>
               <Button

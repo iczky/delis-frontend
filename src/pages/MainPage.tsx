@@ -1,3 +1,4 @@
+import NavbarFeature from "@/components/ui/NavbarFeature";
 import ProductCard from "../components/product/ProductCard";
 import { useCart } from "../hooks/useCart";
 
@@ -58,9 +59,7 @@ const MainPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <h1 className="text-2xl font-bold mb-6 text-center sm:text-left">
-        Our Products
-      </h1>
+      <NavbarFeature />
       <div className="grid grid-cols-2 gap-3">
         {dummyProducts.map((product) => (
           <ProductCard

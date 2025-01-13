@@ -28,7 +28,9 @@ const CartSummary = () => {
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-3xl mx-auto">
       <div className="bg-blue-500 text-white rounded-lg shadow-xl p-4">
         <div className="flex items-center justify-between">
-          <div className="flex flex-col" onClick={() => navigate("/cart")}>
+          <div
+            className="flex flex-col w-full"
+            onClick={() => navigate("/cart")}>
             <span className="text-lg font-medium">
               {totalItems} item{totalItems > 1 ? "s" : ""}
             </span>
@@ -36,7 +38,7 @@ const CartSummary = () => {
           </div>
           <button
             onClick={() => setIsDialogOpen(true)}
-            className="p-2 hover:bg-blue-600 rounded-full transition-colors">
+            className="absolute top-0 right-0 bg-red-500 text-white rounded-lg w-20 h-full flex items-center justify-center">
             <Trash2 className="h-6 w-6" />
           </button>
         </div>
