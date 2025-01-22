@@ -35,10 +35,10 @@ export function ConfirmationDialog({
           <AlertDialogCancel
             className="bg-navbar text-button"
             onClick={onClose}>
-            Cancel
+            Batalkan
           </AlertDialogCancel>
           <AlertDialogAction className="bg-button" onClick={onConfirm}>
-            Continue
+            Hapus
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

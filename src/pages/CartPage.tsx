@@ -48,15 +48,15 @@ const CartPage: React.FC = () => {
   if (cart.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
-        <h1 className="text-xl font-bold text-gray-800">Your cart is empty</h1>
+        <h1 className="text-xl font-bold text-gray-800">Keranjang mu kosong</h1>
         <p className="text-gray-500 mt-2 text-center">
-          Add items to your cart to start shopping.
+          Tambahkan barang yang diinginkan ke keranjang untuk melakukan order
         </p>
         <Button
           variant={"card"}
           className="w-1/2 mt-4"
           onClick={() => window.history.back()}>
-          Go Back to Home
+          Kembali ke halaman utama
         </Button>
       </div>
     );
@@ -69,7 +69,7 @@ const CartPage: React.FC = () => {
         <button onClick={() => window.history.back()} className="text-button">
           <ChevronLeft />
         </button>
-        <h1 className="text-lg font-bold text-card">Cart Summary</h1>
+        <h1 className="text-lg font-bold text-card">Keranjang</h1>
       </div>
 
       {/* Main Content */}

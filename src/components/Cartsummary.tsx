@@ -31,9 +31,7 @@ const CartSummary = () => {
           <div
             className="flex flex-col w-full"
             onClick={() => navigate("/cart")}>
-            <span className="text-lg font-medium">
-              {totalItems} item{totalItems > 1 ? "s" : ""}
-            </span>
+            <span className="text-lg font-medium">{totalItems} barang</span>
             <span className="text-xl font-bold">{formatToIDR(totalPrice)}</span>
           </div>
           <button
@@ -45,8 +43,8 @@ const CartSummary = () => {
       </div>
       <ConfirmationDialog
         isOpen={isDialogOpen}
-        title="Remove all items from cart"
-        description="Are you sure you want to remove all items from your cart?"
+        title="Hapus semua item dari keranjang"
+        description="Apakah kamu yakin ingin menghapus semua item dari keranjang?"
         onConfirm={handleRemove}
         onClose={() => setIsDialogOpen(false)}
       />

@@ -7,7 +7,7 @@ export const PaymentMethod = () => {
     <div className="bg-card rounded-lg shadow-sm mt-4 p-4 border border-green-100">
       <h2 className="font-bold text-gray-800 mb-3 flex items-center">
         <span className="w-1 h-5 bg-background rounded-full mr-2"></span>
-        Payment Method
+        Metode Pembayaran
       </h2>
       <div className="space-y-2">
         <label
@@ -25,7 +25,7 @@ export const PaymentMethod = () => {
           <div>
             <p className="font-medium text-white">Cash on Delivery</p>
             <p className="text-sm text-white">
-              Pay when you receive your order
+              Bayar ketika barang sudah sampai dirumah
             </p>
           </div>
         </label>
@@ -44,7 +44,7 @@ export const PaymentMethod = () => {
           <div>
             <p className="font-medium text-white">Bank Transfer</p>
             <p className="text-sm text-white">
-              Manual transfer to our bank account
+              Informasi bank akan dikirimkan melalui WhatsApp
             </p>
           </div>
         </label>

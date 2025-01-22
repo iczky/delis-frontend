@@ -1,4 +1,4 @@
-import { Trash2 } from "lucide-react";
+import { ShoppingCart, Trash2 } from "lucide-react";
 import { useCart } from "../../hooks/useCart";
 import { formatToIDR } from "../../utils/currencyFormatter";
 import { Button } from "../ui/button";
@@ -77,9 +77,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           // Show Add to Cart button if item is not in cart
           <Button
             variant={"card"}
-            className="mt-2 text-white"
+            className="mt-2 text-white text-wrap p-6"
             onClick={onAddToCart}>
-            Add to Cart
+            Tambahkan <ShoppingCart className="text-white" />
           </Button>
         ) : (
           // Show quantity controls if item is in cart
@@ -105,8 +105,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         onConfirm={handleRemove}
-        title="Remove Item"
-        description="Are you sure you want to remove this item from your cart?"
+        title="Hapus dari Keranjang"
+        description="Apakah kamu yakin ingin menghapus item ini dari keranjang?"
       />
     </div>
   );

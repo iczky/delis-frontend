@@ -14,6 +14,7 @@ export default {
         navbar: "#FFDBAF",
         card: "#CA7B42",
         button: "#823919",
+        dark: "#521908",
         active: "#b78570",
       },
     },

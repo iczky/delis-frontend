@@ -15,7 +15,7 @@ export const OrderSummary = ({
     <div className="bg-card rounded-lg shadow-sm mt-4 p-4 border border-blue-100">
       <h2 className="font-bold text-gray-800 mb-3 flex items-center">
         <span className="w-1 h-5 bg-navbar rounded-full mr-2"></span>
-        Order Summary
+        Ringkasan Pesanan
       </h2>
       <div className="space-y-2">
         <div className="flex justify-between text-white">
@@ -23,7 +23,7 @@ export const OrderSummary = ({
           <span>{formatToIDR(subtotal)}</span>
         </div>
         <div className="flex justify-between text-white">
-          <span>Delivery Fee</span>
+          <span>Biaya Pengiriman</span>
           <span>{formatToIDR(deliveryFee)}</span>
         </div>
         <div className="h-px bg-gray-200 my-2" />

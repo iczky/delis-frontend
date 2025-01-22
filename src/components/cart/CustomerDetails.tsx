@@ -27,35 +27,33 @@ export const CustomerDetails = ({
     <div className="bg-card rounded-lg shadow-sm mt-4 p-4 border border-purple-100 text-left">
       <h2 className="font-bold text-gray-800 mb-3 flex items-center">
         <span className="w-1 h-5 bg-background rounded-full mr-2"></span>
-        Customer Details
+        Informasi Pembeli
       </h2>
       <div className="space-y-3">
         <div>
-          <label className="text-sm text-gray-600 block mb-1">Full Name</label>
+          <label className="text-sm text-white block mb-1">Full Name</label>
           <input
             type="text"
             name="name"
             value={customerDetails.name}
             onChange={handleChange}
             className="w-full px-3 py-2 border bg-background border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
-            placeholder="Enter your full name"
+            placeholder="Masukkan nama lengkap"
           />
         </div>
         <div>
-          <label className="text-sm text-gray-600 block mb-1">
-            Phone Number
-          </label>
+          <label className="text-sm text-white block mb-1">Phone Number</label>
           <input
             type="tel"
             name="phone"
             value={customerDetails.phone}
             onChange={handleChange}
             className="w-full px-3 py-2 bg-background border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
-            placeholder="Enter your phone number"
+            placeholder="Masukkan no WhatsApp aktif"
           />
         </div>
         <div>
-          <label className="text-sm text-gray-600 block mb-1">
+          <label className="text-sm text-white block mb-1">
             Delivery Address
           </label>
           <textarea
@@ -64,12 +62,12 @@ export const CustomerDetails = ({
             onChange={handleChange}
             className="w-full px-3 py-2 border bg-background border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
             rows={3}
-            placeholder="Enter your complete address"
+            placeholder="Masukkan alamat lengkap untuk delivery"
           />
         </div>
         <div>
-          <label className="text-sm text-gray-600 block mb-1">
-            Pickup Date & Time
+          <label className="text-sm text-white block mb-1">
+            Pilih tanggal dan jam kue akan di kirim
           </label>
           <input
             type="datetime-local"
