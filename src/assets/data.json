@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "name": "Chocolate Paradise",
+  "description": "Rich chocolate layers with ganache",
+  "imageUrls": [
+    "https://your-bucket-name.s3.region.amazonaws.com/cakes/chocolate-cake.jpg"
+  ],
+  "price": 35.99
+}

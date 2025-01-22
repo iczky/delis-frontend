@@ -24,9 +24,9 @@ export const CustomerDetails = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm mt-4 p-4 border border-purple-100 text-left">
+    <div className="bg-card rounded-lg shadow-sm mt-4 p-4 border border-purple-100 text-left">
       <h2 className="font-bold text-gray-800 mb-3 flex items-center">
-        <span className="w-1 h-5 bg-purple-400 rounded-full mr-2"></span>
+        <span className="w-1 h-5 bg-background rounded-full mr-2"></span>
         Customer Details
       </h2>
       <div className="space-y-3">
@@ -37,7 +37,7 @@ export const CustomerDetails = ({
             name="name"
             value={customerDetails.name}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
+            className="w-full px-3 py-2 border bg-background border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
             placeholder="Enter your full name"
           />
         </div>
@@ -50,7 +50,7 @@ export const CustomerDetails = ({
             name="phone"
             value={customerDetails.phone}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
+            className="w-full px-3 py-2 bg-background border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
             placeholder="Enter your phone number"
           />
         </div>
@@ -62,7 +62,7 @@ export const CustomerDetails = ({
             name="address"
             value={customerDetails.address}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
+            className="w-full px-3 py-2 border bg-background border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
             rows={3}
             placeholder="Enter your complete address"
           />
@@ -76,7 +76,7 @@ export const CustomerDetails = ({
             name="deliveryDate"
             value={customerDetails.deliveryDate}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
+            className="w-full px-3 py-2 border text-gray-400 bg-background border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-purple-400"
             min={tomorrow.toISOString().slice(0, 16)}
           />
         </div>

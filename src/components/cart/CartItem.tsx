@@ -26,7 +26,7 @@ export const CartItem = ({
   };
 
   return (
-    <div className="bg-white p-3 rounded-lg shadow-sm">
+    <div className="bg-card p-3 rounded-lg shadow-sm">
       <div className="flex gap-3">
         {/* Image */}
         <img
@@ -39,31 +39,31 @@ export const CartItem = ({
         <div className="flex-1">
           {/* Title and Price */}
           <div className="flex items-start justify-between mb-2">
-            <h2 className="font-medium text-gray-800">{item.name}</h2>
+            <h2 className="font-medium text-white">{item.name}</h2>
             <button
               onClick={() => setIsDialogOpen(true)}
-              className="text-gray-400">
+              className="text-white">
               <X size={18} />
             </button>
           </div>
 
           {/* Price per item */}
-          <p className="text-gray-600 text-left text-sm mb-2">
+          <p className="text-white text-left text-sm mb-2">
             {formatToIDR(item.price)} / item
           </p>
 
           {/* Quantity and Total */}
           <div className="flex flex-col-reverse items-start justify-between gap-2">
             <div className="flex items-center gap-4 w-full justify-between">
-              <Button onClick={() => reduceQuantity(item.id)}>
+              <Button variant={"card"} onClick={() => reduceQuantity(item.id)}>
                 <Minus size={18} />
               </Button>
-              <span className="text-gray-800">{item.quantity}</span>
-              <Button onClick={() => addQuantity(item)}>
+              <span className="text-white">{item.quantity}</span>
+              <Button variant={"card"} onClick={() => addQuantity(item)}>
                 <Plus size={18} />
               </Button>
             </div>
-            <p className="font-medium text-gray-800">
+            <p className="font-medium text-white">
               {formatToIDR(item.price * item.quantity)}
             </p>
           </div>

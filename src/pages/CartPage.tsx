@@ -9,6 +9,7 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { Customer } from "@/types/customer";
 import { generateWhatsAppLink } from "@/utils/BroadcastMessage";
+import { Button } from "@/components/ui/button";
 
 const CartPage: React.FC = () => {
   const { cart, getTotalPrice, addToCart, reduceQuantity, removeFromCart } =
@@ -51,18 +52,24 @@ const CartPage: React.FC = () => {
         <p className="text-gray-500 mt-2 text-center">
           Add items to your cart to start shopping.
         </p>
+        <Button
+          variant={"card"}
+          className="w-1/2 mt-4"
+          onClick={() => window.history.back()}>
+          Go Back to Home
+        </Button>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-background to-navbar">
       {/* Header */}
-      <div className="flex gap-2 items-center sticky top-0 bg-white border-b px-4 py-3 z-10 shadow-sm">
-        <button onClick={() => window.history.back()} className="text-blue-500">
+      <div className="flex gap-2 items-center sticky top-0 bg-navbar border-b px-4 py-3 z-10 shadow-sm">
+        <button onClick={() => window.history.back()} className="text-button">
           <ChevronLeft />
         </button>
-        <h1 className="text-lg font-bold text-gray-800">Cart Summary</h1>
+        <h1 className="text-lg font-bold text-card">Cart Summary</h1>
       </div>
 
       {/* Main Content */}
@@ -93,13 +100,10 @@ const CartPage: React.FC = () => {
       </div>
 
       {/* Bottom Fixed Button */}
-      <div className="sticky bottom-0 bg-white border-t p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <button
-          className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium
-                       active:from-blue-600 active:to-blue-700 transition-all shadow-sm"
-          onClick={handleOrderSubmit}>
+      <div className="sticky bottom-0 bg-background border-t p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <Button variant={"card"} onClick={handleOrderSubmit}>
           Place Order • {formatToIDR(totalPrice)}
-        </button>
+        </Button>
       </div>
     </div>
   );

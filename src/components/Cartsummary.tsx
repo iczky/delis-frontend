@@ -26,7 +26,7 @@ const CartSummary = () => {
 
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-3xl mx-auto">
-      <div className="bg-blue-500 text-white rounded-lg shadow-xl p-4">
+      <div className="bg-button text-white rounded-lg shadow-xl p-4">
         <div className="flex items-center justify-between">
           <div
             className="flex flex-col w-full"
@@ -38,8 +38,8 @@ const CartSummary = () => {
           </div>
           <button
             onClick={() => setIsDialogOpen(true)}
-            className="absolute top-0 right-0 bg-red-500 text-white rounded-lg w-20 h-full flex items-center justify-center">
-            <Trash2 className="h-6 w-6" />
+            className="absolute top-0 right-0 bg-background text-white rounded-lg w-20 h-full flex items-center justify-center">
+            <Trash2 color="#823919" className="h-6 w-6" />
           </button>
         </div>
       </div>

@@ -35,7 +35,7 @@ export const generateWhatsAppLink = ({
 
   const formattedPhone = formatPhoneNumber(customerDetails.phone);
 
-  const baseUrl = `https://wa.me/${formattedPhone}`;
+  const baseUrl = `https://wa.me/6281364937316${formattedPhone}`;
   const message = [
     `Pesanan Baru:`,
     ...cart.map((item) => `   *${item.name}: ${item.quantity} pcs*`), // Add indentation

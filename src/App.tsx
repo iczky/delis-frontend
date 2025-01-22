@@ -11,13 +11,15 @@ function App() {
   return (
     <Router>
       <CartProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-        </Routes>
-        <CartSummary />
+        <div className="min-h-screen bg-background">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+          </Routes>
+          <CartSummary />
+        </div>
       </CartProvider>
     </Router>
   );
