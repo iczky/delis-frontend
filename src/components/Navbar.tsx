@@ -1,4 +1,4 @@
-import logo from "../../public/vite.svg";
+import logo from "/vite.svg";
 
 const Navbar = () => {
   return (
